@@ -177,10 +177,14 @@
     <Compile Include="Helpers\KMB\Abstract\MailHelperBase.cs" />
     <Compile Include="Helpers\KMB\Concrete\KMBConfigHelper.cs" />
     <Compile Include="Helpers\KMB\Concrete\KMBMailHelper.cs" />
+    <Compile Include="Models\KmbCmsPage.cs" />
     <Compile Include="Models\KmbContext.cs" />
     <Compile Include="Models\KmbLoginJsonResult.cs" />
     <Compile Include="Models\KmbUser.cs" />
+    <Compile Include="Models\MyJsonResult.cs" />
+    <Compile Include="Models\PageModelBase.cs" />
     <Compile Include="Models\PageField.cs" />
+    <Compile Include="Models\PageModel.cs" />
     <Compile Include="Models\ResetPasswordViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

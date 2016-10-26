@@ -8,11 +8,8 @@ using System.Web;
 namespace Aspnet_mvc_template_cms_sample.Models
 {
     [Table("PageField")]
-    public class PageField
+    public class PageField : KmbCmsPage
     {
-        [Key, Required]
-        public string Id { get; set; }
-
         public string Text { get; set; }
 
         [Required]

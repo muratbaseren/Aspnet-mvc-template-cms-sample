@@ -9,7 +9,6 @@
     <link href="~/Content/modern-business.css" rel="stylesheet" />
     <link href="~/Content/Site.css" rel="stylesheet" />
     <script src="~/Scripts/jquery-2.2.4.min.js"></script>
-    <script src="~/Scripts/angular.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
 </head>
 <body>
@@ -36,11 +35,12 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - KMB Modal Login Test Page</p>
+            <p data-field-id="marketing_copyright_text">&copy; @DateTime.Now.Year - KMB Modal Login Test Page</p>
         </footer>
     </div>
 
     @Html.Partial("_KmbModalLoginPartial")
+
 
 </body>
 </html>

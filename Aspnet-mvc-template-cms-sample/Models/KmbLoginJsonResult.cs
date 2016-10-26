@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace Aspnet_mvc_template_cms_sample.Models
 {
-    public partial class KmbLoginJsonResult
-    {
-        public bool HasError { get; set; }
-        public string Message { get; set; }
+    public partial class KmbLoginJsonResult : MyJsonResult<string>
+    {   
     }
 }
