@@ -2,7 +2,7 @@
 
 namespace Aspnet_mvc_template_cms_sample.Models
 {
-    public class KmbCmsPage
+    public abstract class PageFieldBase
     {
         [Key, Required, StringLength(100)]
         public string Id { get; set; }

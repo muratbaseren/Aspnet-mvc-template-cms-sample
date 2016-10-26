@@ -129,6 +129,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modal-login.js" />
     <Content Include="Scripts\npm.js" />
+    <Content Include="Scripts\PageField.js" />
     <Content Include="template\404.html" />
     <Content Include="template\about.html" />
     <Content Include="template\blog-home-1.html" />
@@ -164,20 +165,18 @@
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\FontAwesome.otf" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KmbLoginController.cs" />
+    <Compile Include="Controllers\PageFieldJSController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\KMB\Abstract\MailHelperBase.cs" />
     <Compile Include="Helpers\KMB\Concrete\KMBConfigHelper.cs" />
     <Compile Include="Helpers\KMB\Concrete\KMBMailHelper.cs" />
-    <Compile Include="Models\KmbCmsPage.cs" />
+    <Compile Include="Models\PageFieldBase.cs" />
     <Compile Include="Models\KmbContext.cs" />
     <Compile Include="Models\KmbLoginJsonResult.cs" />
     <Compile Include="Models\KmbUser.cs" />
@@ -192,6 +191,7 @@
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
     <Content Include="Scripts\jquery-2.2.4.min.map" />
+    <Content Include="Views\PageFieldJS\SamplePage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

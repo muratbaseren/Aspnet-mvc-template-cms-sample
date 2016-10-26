@@ -7,22 +7,27 @@ using System.Web.Mvc;
 
 namespace Aspnet_mvc_template_cms_sample.Controllers
 {
-    public class HomeController : Controller
+    public class PageFieldJSController : Controller
     {
-        public ActionResult Index()
+
+        public ActionResult SamplePage()
         {
             return View();
         }
 
+
         [HttpGet]
-        public JsonResult PageModelLoader(string pname)
+        public JsonResult GetPageFields(string pname)
         {
-            return Json(new PageModel(pname), JsonRequestBehavior.AllowGet);
+            PageModel model = new PageModel(pname);
+            model.LoadPageFields();
+
+            return Json(model, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
         [ValidateInput(false)]
-        public JsonResult UpdateField(string id, string val, string pname)
+        public JsonResult UpdatePageField(string id, string val, string pname)
         {
             if (Session["login"] == null)
                 return Json(new MyJsonResult<string>(true, "Unauthorize access."));

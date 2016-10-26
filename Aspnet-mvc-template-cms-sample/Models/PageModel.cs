@@ -14,9 +14,13 @@ namespace Aspnet_mvc_template_cms_sample.Models
         public PageModel(string pname)
         {
             this.PageName = pname;
+            this.LoadPageFields();
+        }
 
+        public void LoadPageFields()
+        {
             KmbContext db = new KmbContext();
-            this.PageFields = db.PageFields.Where(x => x.PageName == pname).ToList();
+            this.PageFields = db.PageFields.Where(x => x.PageName == this.PageName).ToList();
         }
 
         public PageModel()
