@@ -1,8 +1,5 @@
 ﻿using Aspnet_mvc_template_cms_sample.Infrastructure.Abstract;
 using Aspnet_mvc_template_cms_sample.ModalLogin.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 
 namespace Aspnet_mvc_template_cms_sample.PageFieldPlugin.Abstract
