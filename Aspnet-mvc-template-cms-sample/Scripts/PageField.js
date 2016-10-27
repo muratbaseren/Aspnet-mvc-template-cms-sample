@@ -6,7 +6,7 @@
 
             $.ajax({
                 method: "GET",
-                url: "/PageFieldJS/GetPageFields",
+                url: "/PageField/GetPageFields",
                 data: { pname: cms_pname }
             }).done(function (data) {
                 cms_mode = data.EditMode;
@@ -36,7 +36,7 @@
 
                             $.ajax({
                                 method: "POST",
-                                url: "/PageFieldJS/UpdatePageField",
+                                url: "/PageField/UpdatePageField",
                                 data: { id: field_id, val: field_val, pname: cms_pname }
                             }).done(function (res) {
 
