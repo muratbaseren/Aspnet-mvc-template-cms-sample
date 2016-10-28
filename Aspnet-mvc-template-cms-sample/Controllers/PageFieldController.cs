@@ -30,8 +30,18 @@ namespace Aspnet_mvc_template_cms_sample.Controllers
         [ValidateInput(false)]
         public JsonResult UpdatePageField(string id, string val, string pname)
         {
-            if (Session["login"] == null)
+            if (Session["login"] == null || Session["login"] as LoginUser == null)
+            {
                 return Json(new MyJsonResult<string>(true, "Unauthorize access."));
+            }
+
+            LoginUser user = Session["login"] as LoginUser;
+
+            //// You can add RoleName prop to LoginUser class and use it.
+            //if (user.RoleName != "editor" && (user.RoleName != "*"))
+            //{
+            //    return Json(new MyJsonResult<string>(true, "Unauthorize access."));
+            //}
 
             SampleDatabaseContext db = new SampleDatabaseContext();
             BasicPageField field = db.BasicPageFields.FirstOrDefault(x => x.Id == id);
@@ -45,7 +55,7 @@ namespace Aspnet_mvc_template_cms_sample.Controllers
             }
 
             field.LastModifiedDate = DateTime.Now;
-            field.LastModifiedUser = (Session["login"] as LoginUser).Username;
+            field.LastModifiedUser = user.Username;
             field.Text = val;
 
             if (db.SaveChanges() > 0)
