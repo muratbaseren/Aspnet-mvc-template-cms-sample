@@ -11,20 +11,27 @@
             }).done(function (data) {
                 cms_mode = data.EditMode;
 
+                console.log(data);
+
                 $("*[data-field-id]").each(function (i, item) {
                     $(item).attr("contenteditable", cms_mode);
 
-                    for (var i in data.PageFields) {
-                        if (data.PageFields[i].Id == $(item).data("field-id")) {
-                            $(item).html(data.PageFields[i].Text);
+                    for (var x in data.PageFields) {
+                        if (data.PageFields[x].Id === $(item).data("field-id")) {
+                            if (cms_mode === true) {
+                                $(item).text(data.PageFields[x].Text);
+                            }
+                            else {
+                                $(item).html(data.PageFields[x].Text);
+                            }
                             break;
                         }
                     }
 
-                    if (cms_mode == true) {
+                    if (cms_mode === true) {
                         // in edit mode..
                         // Prevent anchors default behaivour.
-                        if ($(item).attr("href") != null) {
+                        if ($(item).attr("href") !== null) {
                             $(item).attr("href", "return false;");
                         }
 
@@ -40,7 +47,7 @@
                                 data: { id: field_id, val: field_val, pname: cms_pname }
                             }).done(function (res) {
 
-                                if (res.HasError == false) {
+                                if (res.HasError === false) {
                                     control.css("opacity", 0);
 
                                     control.animate({
